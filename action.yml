@@ -1,0 +1,26 @@
+name: 'Latest ECR Hash'
+description: 'Get the tagged hash of an image tagged as latest'
+inputs:
+  AWS_ACCESS_KEY_ID:
+    description: 'AWS access key'
+    required: true
+  AWS_SECRET_ACCESS_KEY:
+    description: 'AWS access key secret'
+    required: true
+  AWS_REGION:
+    description: 'AWS access key'
+    required: true
+  REPOSITORY_NAME:
+    description: 'Name of ECR repository'
+    required: true
+outputs:
+  hash:
+    description: 'Hash of the Docker image'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.AWS_ACCESS_KEY_ID }}
+    - ${{ inputs.AWS_SECRET_ACCESS_KEY }}
+    - ${{ inputs.AWS_REGION }}
+    - ${{ inputs.REPOSITORY_NAME }}
