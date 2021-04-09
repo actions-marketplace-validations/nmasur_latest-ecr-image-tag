@@ -24,3 +24,6 @@ runs:
     - ${{ inputs.AWS_SECRET_ACCESS_KEY }}
     - ${{ inputs.AWS_REGION }}
     - ${{ inputs.REPOSITORY_NAME }}
+branding:
+  icon: 'box'  
+  color: 'yellow'
